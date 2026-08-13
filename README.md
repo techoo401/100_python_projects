@@ -9,6 +9,7 @@ A collection of **100 Python projects** built to improve my Python skills throug
 | 01 | Hello World       | ✅ Completed |
 | 02 | Simple Calculator | ✅ Completed |
 | 03 | Unit Converter    | ✅ Completed |
+| 04 | Age Calculator    | ✅ Completed |
 
 ## 🎯 Goal
 
@@ -16,6 +17,6 @@ Build **100 Python projects**, one project at a time, while improving my problem
 
 ## 📈 Progress
 
-**3 / 100 Projects Completed**
+**4 / 100 Projects Completed**
 
-**3% Complete**
+**4% Complete**
