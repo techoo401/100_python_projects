@@ -12,6 +12,7 @@ A collection of **100 Python projects** built to improve my Python skills throug
 | 04 | Age Calculator        | ✅ Completed |
 | 05 | Temperature Converter | ✅ Completed |
 | 06 | Number Guessing Game  | ✅ Completed |
+| 07 | Rock Paper Scissors   | ✅ Completed |
 
 ## 🎯 Goal
 
@@ -19,6 +20,6 @@ Build **100 Python projects**, one project at a time, while improving my problem
 
 ## 📈 Progress
 
-**6 / 100 Projects Completed**
+**7 / 100 Projects Completed**
 
-**6% Complete**
+**7% Complete**
