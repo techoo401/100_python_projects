@@ -15,6 +15,7 @@ A collection of **100 Python projects** built to improve my Python skills throug
 | 07 | Rock Paper Scissors       | ✅ Completed |
 | 08 | Dice Roller               | ✅ Completed |
 | 09 | Random Password Generator | ✅ Completed |
+| 10 | Simple Quiz Game          | ✅ Completed |
 
 ## 🎯 Goal
 
@@ -22,6 +23,6 @@ Build **100 Python projects**, one project at a time, while improving my problem
 
 ## 📈 Progress
 
-**9 / 100 Projects Completed**
+**10 / 100 Projects Completed**
 
-**9% Complete**
+**10% Complete**
