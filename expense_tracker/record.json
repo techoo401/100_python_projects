@@ -1,0 +1,14 @@
+[
+    {
+        "type": "Asset",
+        "asset_name": "pocket money",
+        "amount": 1000,
+        "date": "2026-08-29"
+    },
+    {
+        "type": "Expense",
+        "expense_name": "food",
+        "amount": 500,
+        "date": "2026-08-29"
+    }
+]
