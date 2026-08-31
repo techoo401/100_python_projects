@@ -25,6 +25,7 @@ A collection of **100 Python projects** built to improve my Python skills throug
 | 17 | Fibonacci Generator            | ✅ Completed |
 | 18 | Prime Number Checker           | ✅ Completed |
 | 19 | Multiplication Table Generator | ✅ Completed |
+| 20 | Word Counter                   | ✅ Completed |
 
 ## 🎯 Goal
 
@@ -32,6 +33,10 @@ Build **100 Python projects**, one project at a time, while improving my problem
 
 ## 📈 Progress
 
-**19 / 100 Projects Completed**
+**20 / 100 Projects Completed**
 
-**19% Complete**
+**20% Complete**
+
+### 🏆 Milestone
+
+**Beginner Section: 20 / 20 Completed — 100% 🎉**
