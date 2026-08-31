@@ -35,4 +35,4 @@ while total_seconds > 0:
     total_seconds -= 1
 
 print("00:00:00")
-playsound("song.mp3")
+playsound("sound.mp3")

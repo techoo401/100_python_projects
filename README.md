@@ -21,6 +21,7 @@ A collection of **100 Python projects** built to improve my Python skills throug
 | 13 | Expense Tracker           | ✅ Completed |
 | 14 | Digital Clock             | ✅ Completed |
 | 15 | Countdown Timer           | ✅ Completed |
+| 16 | Alarm Clock               | ✅ Completed |
 
 ## 🎯 Goal
 
@@ -28,6 +29,6 @@ Build **100 Python projects**, one project at a time, while improving my problem
 
 ## 📈 Progress
 
-**15 / 100 Projects Completed**
+**16 / 100 Projects Completed**
 
-**15% Complete**
+**16% Complete**
