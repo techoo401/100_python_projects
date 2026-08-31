@@ -22,6 +22,7 @@ A collection of **100 Python projects** built to improve my Python skills throug
 | 14 | Digital Clock             | ✅ Completed |
 | 15 | Countdown Timer           | ✅ Completed |
 | 16 | Alarm Clock               | ✅ Completed |
+| 17 | Fibonacci Generator       | ✅ Completed |
 
 ## 🎯 Goal
 
@@ -29,6 +30,6 @@ Build **100 Python projects**, one project at a time, while improving my problem
 
 ## 📈 Progress
 
-**16 / 100 Projects Completed**
+**17 / 100 Projects Completed**
 
-**16% Complete**
+**17% Complete**
