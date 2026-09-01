@@ -1,42 +1,46 @@
 # 🐍 100 Python Projects
 
-A collection of **100 Python projects** built to improve my Python skills through hands-on practice.
+A collection of Python projects built to improve my Python skills through hands-on practice.
 
-## 📂 Projects
+## 🟢 Beginner — Days 1–20
 
-| #  | Project                        | Status      |
-| -- | ------------------------------ | ----------- |
-| 01 | Hello World                    | ✅ Completed |
-| 02 | Simple Calculator              | ✅ Completed |
-| 03 | Unit Converter                 | ✅ Completed |
-| 04 | Age Calculator                 | ✅ Completed |
-| 05 | Temperature Converter          | ✅ Completed |
-| 06 | Number Guessing Game           | ✅ Completed |
-| 07 | Rock Paper Scissors            | ✅ Completed |
-| 08 | Dice Roller                    | ✅ Completed |
-| 09 | Random Password Generator      | ✅ Completed |
-| 10 | Simple Quiz Game               | ✅ Completed |
-| 11 | To-Do List CLI                 | ✅ Completed |
-| 12 | Contact Book                   | ✅ Completed |
-| 13 | Expense Tracker                | ✅ Completed |
-| 14 | Digital Clock                  | ✅ Completed |
-| 15 | Countdown Timer                | ✅ Completed |
-| 16 | Alarm Clock                    | ✅ Completed |
-| 17 | Fibonacci Generator            | ✅ Completed |
-| 18 | Prime Number Checker           | ✅ Completed |
-| 19 | Multiplication Table Generator | ✅ Completed |
-| 20 | Word Counter                   | ✅ Completed |
+| #  | Project                        | Status |
+| -- | ------------------------------ | ------ |
+| 01 | Hello World                    | ✅      |
+| 02 | Simple Calculator              | ✅      |
+| 03 | Unit Converter                 | ✅      |
+| 04 | Age Calculator                 | ✅      |
+| 05 | Temperature Converter          | ✅      |
+| 06 | Number Guessing Game           | ✅      |
+| 07 | Rock Paper Scissors            | ✅      |
+| 08 | Dice Roller                    | ✅      |
+| 09 | Random Password Generator      | ✅      |
+| 10 | Simple Quiz Game               | ✅      |
+| 11 | To-Do List CLI                 | ✅      |
+| 12 | Contact Book                   | ✅      |
+| 13 | Expense Tracker                | ✅      |
+| 14 | Digital Clock                  | ✅      |
+| 15 | Countdown Timer                | ✅      |
+| 16 | Alarm Clock                    | ✅      |
+| 17 | Fibonacci Generator            | ✅      |
+| 18 | Prime Number Checker           | ✅      |
+| 19 | Multiplication Table Generator | ✅      |
+| 20 | Word Counter                   | ✅      |
 
-## 🎯 Goal
+### 🏆 Beginner Progress
 
-Build **100 Python projects**, one project at a time, while improving my problem-solving and Python programming skills.
+**20 / 20 — 100% Complete**
 
-## 📈 Progress
+---
 
-**20 / 100 Projects Completed**
+## 🟡 Beginner+ — Day 21
 
-**20% Complete**
+| #  | Project        | Status |
+| -- | -------------- | ------ |
+| 21 | File Organizer | ✅      |
 
-### 🏆 Milestone
+### 📊 Current Progress
 
-**Beginner Section: 20 / 20 Completed — 100% 🎉**
+**21 / 100 Projects Completed**
+
+**21% Complete**
