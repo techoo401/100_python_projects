@@ -33,14 +33,21 @@ A collection of Python projects built to improve my Python skills through hands-
 
 ---
 
-## 🟡 Beginner+ — Day 21
+## 🟡 Beginner+ — Days 21–22
 
-| #  | Project        | Status |
-| -- | -------------- | ------ |
-| 21 | File Organizer | ✅      |
+| #  | Project               | Status |
+| -- | --------------------- | ------ |
+| 21 | File Organizer        | ✅      |
+| 22 | Duplicate File Finder | ✅      |
 
-### 📊 Current Progress
+### 📊 Beginner+ Progress
 
-**21 / 100 Projects Completed**
+**2 / 20 — 10% Complete**
 
-**21% Complete**
+---
+
+## 📈 Overall Progress
+
+**22 / 100 Projects Completed**
+
+**22% Complete**
