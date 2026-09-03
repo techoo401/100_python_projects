@@ -33,22 +33,23 @@ A collection of Python projects built to improve my Python skills through hands-
 
 ---
 
-## 🟡 Beginner+ — Days 21–23
+## 🟡 Beginner+ — Days 21–24
 
 | #  | Project               | Status |
 | -- | --------------------- | ------ |
 | 21 | File Organizer        | ✅      |
 | 22 | Duplicate File Finder | ✅      |
 | 23 | File Renamer          | ✅      |
+| 24 | Folder Size Analyzer  | ✅      |
 
 ### 📊 Beginner+ Progress
 
-**3 / 20 — 15% Complete**
+**4 / 20 — 20% Complete**
 
 ---
 
 ## 📈 Overall Progress
 
-**23 / 100 Projects Completed**
+**24 / 100 Projects Completed**
 
-**23% Complete**
+**24% Complete**
