@@ -33,7 +33,7 @@ A collection of Python projects built to improve my Python skills through hands-
 
 ---
 
-## 🟡 Beginner+ — Days 21–25
+## 🟡 Beginner+ — Days 21–26
 
 | #  | Project               | Status |
 | -- | --------------------- | ------ |
@@ -42,15 +42,16 @@ A collection of Python projects built to improve my Python skills through hands-
 | 23 | File Renamer          | ✅      |
 | 24 | Folder Size Analyzer  | ✅      |
 | 25 | Text File Search Tool | ✅      |
+| 26 | CSV Viewer            | ✅      |
 
 ### 📊 Beginner+ Progress
 
-**5 / 20 — 25% Complete**
+**6 / 20 — 30% Complete**
 
 ---
 
 ## 📈 Overall Progress
 
-**25 / 100 Projects Completed**
+**26 / 100 Projects Completed**
 
-**25% Complete**
+**26% Complete**
