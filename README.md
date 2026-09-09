@@ -33,27 +33,28 @@ A collection of Python projects built to improve my Python skills through hands-
 
 ---
 
-## 🟡 Beginner+ — Days 21–28
+## 🟡 Beginner+ — Days 21–29
 
-| #  | Project               | Status |
-| -- | --------------------- | ------ |
-| 21 | File Organizer        | ✅      |
-| 22 | Duplicate File Finder | ✅      |
-| 23 | File Renamer          | ✅      |
-| 24 | Folder Size Analyzer  | ✅      |
-| 25 | Text File Search Tool | ✅      |
-| 26 | CSV Viewer            | ✅      |
-| 27 | CSV Data Cleaner      | ✅      |
-| 28 | JSON Formatter        | ✅      |
+| #  | Project                    | Status |
+| -- | -------------------------- | ------ |
+| 21 | File Organizer             | ✅      |
+| 22 | Duplicate File Finder      | ✅      |
+| 23 | File Renamer               | ✅      |
+| 24 | Folder Size Analyzer       | ✅      |
+| 25 | Text File Search Tool      | ✅      |
+| 26 | CSV Viewer                 | ✅      |
+| 27 | CSV Data Cleaner           | ✅      |
+| 28 | JSON Formatter             | ✅      |
+| 29 | Markdown to HTML Converter | ✅      |
 
 ### 📊 Beginner+ Progress
 
-**8 / 20 — 40% Complete**
+**9 / 20 — 45% Complete**
 
 ---
 
 ## 📈 Overall Progress
 
-**28 / 100 Projects Completed**
+**29 / 100 Projects Completed**
 
-**28% Complete**
+**29% Complete**
