@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>URL Shortener</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family: Arial, sans-serif;
+
+            background: #f4f6f8;
+        }
+
+        .container {
+            width: 450px;
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+
+            padding: 12px;
+
+            margin-top: 8px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 6px;
+
+            font-size: 15px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #333;
+        }
+
+        .field {
+            margin-bottom: 20px;
+        }
+
+        button {
+            width: 100%;
+
+            padding: 12px;
+
+            border: none;
+
+            border-radius: 6px;
+
+            background: #222;
+
+            color: white;
+
+            font-size: 16px;
+
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #444;
+        }
+
+        .error {
+            margin-top: 20px;
+
+            padding: 12px;
+
+            border-radius: 6px;
+
+            background: #ffe5e5;
+
+            color: #b00000;
+        }
+
+        .success {
+            margin-top: 25px;
+
+            padding: 15px;
+
+            border-radius: 6px;
+
+            background: #e8f7e8;
+        }
+
+        .success a {
+            word-break: break-all;
+        }
+
+        .links {
+            margin-top: 25px;
+
+            text-align: center;
+        }
+
+        .links a {
+            color: #222;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <h1>🔗 URL Shortener</h1>
+
+        <p class="description">
+            Turn your long URLs into short links.
+        </p>
+
+
+        <form method="POST">
+
+            <div class="field">
+
+                <label>Long URL</label>
+
+                <input
+                    type="url"
+                    name="url"
+                    placeholder="https://example.com"
+                    required
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label>Custom Short Code</label>
+
+                <input
+                    type="text"
+                    name="short_code"
+                    placeholder="my-link"
+                    required
+                >
+
+            </div>
+
+
+            <button type="submit">
+                Shorten URL
+            </button>
+
+        </form>
+
+
+        {% if error %}
+
+            <div class="error">
+                ❌ {{ error }}
+            </div>
+
+        {% endif %}
+
+
+        {% if short_url %}
+
+            <div class="success">
+
+                <strong>✅ URL shortened successfully!</strong>
+
+                <p>Your short URL:</p>
+
+                <a href="{{ short_url }}">
+                    {{ short_url }}
+                </a>
+
+            </div>
+
+        {% endif %}
+
+
+        <div class="links">
+
+            <a href="/urls">
+                📋 Show All URLs
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
