@@ -33,7 +33,7 @@ A collection of Python projects built to improve my Python skills through hands-
 
 ---
 
-## 🟡 Beginner+ — Days 21–31
+## 🟡 Beginner+ — Days 21–32
 
 | #  | Project                    | Status |
 | -- | -------------------------- | ------ |
@@ -48,15 +48,16 @@ A collection of Python projects built to improve my Python skills through hands-
 | 29 | Markdown to HTML Converter | ✅      |
 | 30 | Password Strength Checker  | ✅      |
 | 31 | URL Shortener              | ✅      |
+| 32 | QR Code Generator          | ✅      |
 
 ### 📊 Beginner+ Progress
 
-**11 / 20 — 55% Complete**
+**12 / 20 — 60% Complete**
 
 ---
 
 ## 📈 Overall Progress
 
-**31 / 100 Projects Completed**
+**32 / 100 Python Projects Completed**
 
-**31% Complete**
+**32% Complete**
