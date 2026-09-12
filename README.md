@@ -35,20 +35,20 @@ A collection of Python projects built to improve my Python skills through hands-
 
 ## 🟡 Beginner+ — Days 21–32
 
-| #  | Project                    | Status |
-| -- | -------------------------- | ------ |
-| 21 | File Organizer             | ✅      |
-| 22 | Duplicate File Finder      | ✅      |
-| 23 | File Renamer               | ✅      |
-| 24 | Folder Size Analyzer       | ✅      |
-| 25 | Text File Search Tool      | ✅      |
-| 26 | CSV Viewer                 | ✅      |
-| 27 | CSV Data Cleaner           | ✅      |
-| 28 | JSON Formatter             | ✅      |
-| 29 | Markdown to HTML Converter | ✅      |
-| 30 | Password Strength Checker  | ✅      |
-| 31 | URL Shortener              | ✅      |
-| 32 | QR Code Generator          | ✅      |
+| #  | Project                    | Status | Live Demo                           |
+| -- | -------------------------- | ------ | ----------------------------------- |
+| 21 | File Organizer             | ✅      | —                                   |
+| 22 | Duplicate File Finder      | ✅      | —                                   |
+| 23 | File Renamer               | ✅      | —                                   |
+| 24 | Folder Size Analyzer       | ✅      | —                                   |
+| 25 | Text File Search Tool      | ✅      | —                                   |
+| 26 | CSV Viewer                 | ✅      | —                                   |
+| 27 | CSV Data Cleaner           | ✅      | —                                   |
+| 28 | JSON Formatter             | ✅      | —                                   |
+| 29 | Markdown to HTML Converter | ✅      | —                                   |
+| 30 | Password Strength Checker  | ✅      | —                                   |
+| 31 | URL Shortener              | ✅      | —                                   |
+| 32 | QR Code Generator          | ✅      | [Open](https://qrget.onrender.com/) |
 
 ### 📊 Beginner+ Progress
 
@@ -58,6 +58,6 @@ A collection of Python projects built to improve my Python skills through hands-
 
 ## 📈 Overall Progress
 
-**32 / 100 Python Projects Completed**
+**32 / 100 Projects Completed**
 
 **32% Complete**
