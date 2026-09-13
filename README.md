@@ -50,15 +50,16 @@ A collection of Python projects built to improve my Python skills through hands-
 | 31 | URL Shortener              | ✅      | —                                    |
 | 32 | QR Code Generator          | ✅      | [Open](https://qrget.onrender.com/)  |
 | 33 | QR Code Scanner            | ✅      | [Open](https://qrshow.onrender.com/) |
+| 34 | Random Quote Generator     | ✅      | —                                    |
 
 ### 📊 Beginner+ Progress
 
-**13 / 20 — 65% Complete**
+**14 / 20 — 70% Complete**
 
 ---
 
 ## 📈 Overall Progress
 
-**33 / 100 Projects Completed**
+**34 / 100 Projects Completed**
 
-**33% Complete**
+**34% Complete**
