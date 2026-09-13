@@ -2,7 +2,7 @@
 
 A collection of Python projects built to improve my Python skills through hands-on practice.
 
-## 🟢 Beginner — Days 1–20
+## 🟢 Beginner
 
 | #  | Project                        | Status |
 | -- | ------------------------------ | ------ |
@@ -33,23 +33,23 @@ A collection of Python projects built to improve my Python skills through hands-
 
 ---
 
-## 🟡 Beginner+ — Days 21–33
+## 🟡 Beginner+
 
-| #  | Project                    | Status | Live Demo                           |
-| -- | -------------------------- | ------ | ----------------------------------- |
-| 21 | File Organizer             | ✅      | —                                   |
-| 22 | Duplicate File Finder      | ✅      | —                                   |
-| 23 | File Renamer               | ✅      | —                                   |
-| 24 | Folder Size Analyzer       | ✅      | —                                   |
-| 25 | Text File Search Tool      | ✅      | —                                   |
-| 26 | CSV Viewer                 | ✅      | —                                   |
-| 27 | CSV Data Cleaner           | ✅      | —                                   |
-| 28 | JSON Formatter             | ✅      | —                                   |
-| 29 | Markdown to HTML Converter | ✅      | —                                   |
-| 30 | Password Strength Checker  | ✅      | —                                   |
-| 31 | URL Shortener              | ✅      | —                                   |
-| 32 | QR Code Generator          | ✅      | [Open](https://qrget.onrender.com/) |
-| 33 | QR Code Scanner            | ✅      | —                                   |
+| #  | Project                    | Status | Live Demo                            |
+| -- | -------------------------- | ------ | ------------------------------------ |
+| 21 | File Organizer             | ✅      | —                                    |
+| 22 | Duplicate File Finder      | ✅      | —                                    |
+| 23 | File Renamer               | ✅      | —                                    |
+| 24 | Folder Size Analyzer       | ✅      | —                                    |
+| 25 | Text File Search Tool      | ✅      | —                                    |
+| 26 | CSV Viewer                 | ✅      | —                                    |
+| 27 | CSV Data Cleaner           | ✅      | —                                    |
+| 28 | JSON Formatter             | ✅      | —                                    |
+| 29 | Markdown to HTML Converter | ✅      | —                                    |
+| 30 | Password Strength Checker  | ✅      | —                                    |
+| 31 | URL Shortener              | ✅      | —                                    |
+| 32 | QR Code Generator          | ✅      | [Open](https://qrget.onrender.com/)  |
+| 33 | QR Code Scanner            | ✅      | [Open](https://qrshow.onrender.com/) |
 
 ### 📊 Beginner+ Progress
 
