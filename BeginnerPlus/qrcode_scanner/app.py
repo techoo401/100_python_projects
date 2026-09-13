@@ -1,11 +1,9 @@
 from flask import Flask, render_template, request
 import cv2
 import os
+import tempfile
 
 app = Flask(__name__)
-
-UPLOAD_FOLDER = "uploads"
-app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -15,30 +13,40 @@ def home():
 
     if request.method == "POST":
 
-        file = request.files["file"]
+        file = request.files.get("file")
 
-        filepath = os.path.join(
-            app.config["UPLOAD_FOLDER"],
-            file.filename
-        )
+        if not file or file.filename == "":
+            result = "Please select an image."
+            return render_template("index.html", result=result)
 
-        file.save(filepath)
+        # Create a temporary file
+        temp_file = tempfile.NamedTemporaryFile(delete=False)
+        filepath = temp_file.name
+        temp_file.close()
 
-        image = cv2.imread(filepath)
+        try:
+            file.save(filepath)
 
-        detector = cv2.QRCodeDetector()
+            image = cv2.imread(filepath)
 
-        data, points, _ = detector.detectAndDecode(image)
+            if image is None:
+                result = "Could not read the image."
+            else:
+                detector = cv2.QRCodeDetector()
 
-        if data:
-            result = data
-        else:
-            result = "No QR code detected."
+                data, points, _ = detector.detectAndDecode(image)
 
-        os.remove(filepath)
+                if data:
+                    result = data
+                else:
+                    result = "No QR code detected."
+
+        finally:
+            if os.path.exists(filepath):
+                os.remove(filepath)
 
     return render_template("index.html", result=result)
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
