@@ -33,7 +33,7 @@ A collection of Python projects built to improve my Python skills through hands-
 
 ---
 
-## 🟡 Beginner+ — Days 21–32
+## 🟡 Beginner+ — Days 21–33
 
 | #  | Project                    | Status | Live Demo                           |
 | -- | -------------------------- | ------ | ----------------------------------- |
@@ -49,15 +49,16 @@ A collection of Python projects built to improve my Python skills through hands-
 | 30 | Password Strength Checker  | ✅      | —                                   |
 | 31 | URL Shortener              | ✅      | —                                   |
 | 32 | QR Code Generator          | ✅      | [Open](https://qrget.onrender.com/) |
+| 33 | QR Code Scanner            | ✅      | —                                   |
 
 ### 📊 Beginner+ Progress
 
-**12 / 20 — 60% Complete**
+**13 / 20 — 65% Complete**
 
 ---
 
 ## 📈 Overall Progress
 
-**32 / 100 Projects Completed**
+**33 / 100 Projects Completed**
 
-**32% Complete**
+**33% Complete**
