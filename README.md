@@ -54,15 +54,16 @@ A collection of Python projects built to improve my Python skills through hands-
 | 35 | Currency Converter         | Flask, API integration, `requests`, JSON, forms, dynamic data                          | [Open](https://currencyswap.onrender.com/) |
 | 36 | Weather CLI                | API integration, `requests`, `.env`, API keys, JSON, HTTP status codes                 | —                                          |
 | 37 | News CLI                   | API integration, `requests`, `.env`, JSON, category-based searching, HTTP status codes | —                                          |
+| 38 | Wikipedia CLI              | Wikipedia REST API, `requests`, URL encoding, JSON, HTTP headers, User-Agent           | —                                          |
 
 ### 📊 Beginner+ Progress
 
-**17 / 20 — 85% Complete**
+**18 / 20 — 90% Complete**
 
 ---
 
 ## 📈 Overall Progress
 
-**37 / 100 Python Projects Completed**
+**38 / 100 Python Projects Completed**
 
-**37% Complete**
+**38% Complete**
