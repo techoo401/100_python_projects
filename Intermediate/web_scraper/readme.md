@@ -11,7 +11,7 @@ Enter a webpage URL and the scraper collects the page title, headings, paragraph
 🚀 Try the Web Scraper:
 Web Scraper
 
-Replace YOUR_RENDER_URL with your actual Render deployment URL.
+[Open](https://webscrapy-ob4d.onrender.com
 
 ---
 

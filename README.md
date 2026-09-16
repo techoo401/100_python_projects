@@ -68,7 +68,7 @@ A collection of Python projects built to improve my Python skills through hands-
 
 | #  | Project     | Key Skills                                                                                   | Live Demo |
 | -- | ----------- | -------------------------------------------------------------------------------------------- | --------- |
-| 41 | Web Scraper | Flask, BeautifulSoup, `requests`, web scraping, `urljoin()`, JSON/CSV export, HTTP responses | —         |
+|41 | Web Scraper | Flask, BeautifulSoup, requests, web scraping, urljoin(), JSON/CSV export, HTTP responses | [Open](https://webscrapy-ob4d.onrender.com/)|
 
 ### 📊 Intermediate Progress
 
