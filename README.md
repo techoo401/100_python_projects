@@ -64,8 +64,20 @@ A collection of Python projects built to improve my Python skills through hands-
 
 ---
 
+## 🔵 Intermediate
+
+| #  | Project     | Key Skills                                                                                   | Live Demo |
+| -- | ----------- | -------------------------------------------------------------------------------------------- | --------- |
+| 41 | Web Scraper | Flask, BeautifulSoup, `requests`, web scraping, `urljoin()`, JSON/CSV export, HTTP responses | —         |
+
+### 📊 Intermediate Progress
+
+**1 / 20 — 5% Complete**
+
+---
+
 ## 📈 Overall Progress
 
-**40 / 100 Python Projects Completed**
+**41 / 100 Python Projects Completed**
 
-**40% Complete**
+**41% Complete**

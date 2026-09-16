@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web Scraper</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <script>
+        const scrapedData = {
+            title: {{ title|tojson }},
+            description: {{ description|tojson }},
+            author: {{ author|tojson }},
+            language: {{ language|tojson }},
+            canonical: {{ canonical|tojson }},
+            headings: {{ headings|tojson }},
+            paragraphs: {{ paragraphs|tojson }},
+            links: {{ links|tojson }},
+            images: {{ images|tojson }},
+            statistics: {{ statistics|tojson }}
+        };
+
+        function exportData(format) {
+
+            fetch(`/export/${format}`, {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify(scrapedData)
+            })
+            .then(response => response.blob())
+            .then(blob => {
+
+                const url = window.URL.createObjectURL(blob);
+
+                const link = document.createElement("a");
+
+                link.href = url;
+                link.download = `scraped_data.${format}`;
+
+                document.body.appendChild(link);
+
+                link.click();
+
+                link.remove();
+
+                window.URL.revokeObjectURL(url);
+            });
+        }
+    </script>
+
+    <div class="container">
+
+        <div class="header">
+            <h1>🕷️ Web Scraper</h1>
+            <p>Extract useful information from any webpage.</p>
+        </div>
+
+        <form method="POST" class="scraper-form">
+
+            <input
+                type="text"
+                name="url"
+                placeholder="https://example.com"
+                required
+            >
+
+            <button type="submit">
+                🔍 Scrape Website
+            </button>
+
+        </form>
+
+
+        {% if error %}
+
+            <div class="error">
+                {{ error }}
+            </div>
+
+        {% endif %}
+
+
+        {% if title %}
+
+            <div class="website-info">
+
+                <h2>{{ title }}</h2>
+
+                {% if description or author or language or canonical %}
+
+                    <div class="result-section">
+
+                        <h2>🌐 Meta Information</h2>
+
+                        {% if description %}
+                            <div class="meta-item">
+                                <strong>Description</strong>
+                                <p>{{ description }}</p>
+                            </div>
+                        {% endif %}
+
+                        {% if author %}
+                            <div class="meta-item">
+                                <strong>Author</strong>
+                                <p>{{ author }}</p>
+                            </div>
+                        {% endif %}
+
+                        {% if language %}
+                            <div class="meta-item">
+                                <strong>Language</strong>
+                                <p>{{ language }}</p>
+                            </div>
+                        {% endif %}
+
+                        {% if canonical %}
+                            <div class="meta-item">
+                                <strong>Canonical URL</strong>
+                                <a href="{{ canonical }}" target="_blank" rel="noopener noreferrer">
+                                    {{ canonical }}
+                                </a>
+                            </div>
+                        {% endif %}
+
+                    </div>
+
+                {% endif %}
+
+            </div>
+
+
+            <div class="statistics">
+
+                <div class="stat-card">
+                    <span>🔗</span>
+                    <h3>{{ statistics.links }}</h3>
+                    <p>Links</p>
+                </div>
+
+                <div class="stat-card">
+                    <span>🖼️</span>
+                    <h3>{{ statistics.images }}</h3>
+                    <p>Images</p>
+                </div>
+
+                <div class="stat-card">
+                    <span>📑</span>
+                    <h3>{{ statistics.headings }}</h3>
+                    <p>Headings</p>
+                </div>
+
+                <div class="stat-card">
+                    <span>📝</span>
+                    <h3>{{ statistics.paragraphs }}</h3>
+                    <p>Paragraphs</p>
+                </div>
+
+            </div>
+
+            <div class="export-buttons">
+
+                <button type="button" onclick="exportData('json')">
+                    📥 Download JSON
+                </button>
+
+                <button type="button" onclick="exportData('csv')">
+                    📊 Download CSV
+                </button>
+
+            </div>
+
+
+            {% if headings %}
+
+                <div class="result-section">
+
+                    <h2>📑 Headings</h2>
+
+                    {% for heading in headings %}
+
+                        <div class="heading-item">
+
+                            <span>{{ heading.tag.upper() }}</span>
+
+                            <p>{{ heading.text }}</p>
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% endif %}
+
+
+            {% if paragraphs %}
+
+                <div class="result-section">
+
+                    <h2>📝 Paragraphs</h2>
+
+                    {% for paragraph in paragraphs %}
+
+                        <p class="paragraph">
+                            {{ paragraph }}
+                        </p>
+
+                    {% endfor %}
+
+                </div>
+
+            {% endif %}
+
+
+            {% if links %}
+
+                <div class="result-section">
+
+                    <h2>🔗 Links</h2>
+
+                    {% for link in links %}
+
+                        <div class="link-item">
+
+                            <strong>
+                                {{ link.text }}
+                            </strong>
+
+                            <a
+                                href="{{ link.url }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {{ link.url }}
+                            </a>
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% endif %}
+
+
+            {% if images %}
+
+                <div class="result-section">
+
+                    <h2>🖼️ Images</h2>
+
+                    {% for image in images %}
+
+                        <div class="image-item">
+
+                            <strong>
+                                {{ image.alt }}
+                            </strong>
+
+                            <a
+                                href="{{ image.url }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {{ image.url }}
+                            </a>
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% endif %}
+
+        {% endif %}
+
+    </div>
+
+</body>
+</html>
