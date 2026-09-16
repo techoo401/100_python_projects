@@ -55,7 +55,7 @@ A collection of Python projects built to improve my Python skills through hands-
 | 36 | Weather CLI                 | API integration, `requests`, `.env`, API keys, JSON, HTTP status codes                 | —                                          |
 | 37 | News CLI                    | API integration, `requests`, `.env`, JSON, category-based searching, HTTP status codes | —                                          |
 | 38 | Wikipedia CLI               | Wikipedia REST API, `requests`, URL encoding, JSON, HTTP headers, User-Agent           | —                                          |
-| 39 | YouTube Video Metadata Tool | YouTube Data API, Flask, `.env`, `requests`, URL parsing, JSON, regex, Jinja           | —                                          |
+| 39 | YouTube Video Metadata Tool | YouTube Data API, Flask, `.env`, `requests`, URL parsing, JSON, regex, Jinja           | [Open](https://ytmetatool.onrender.com/)   |
 
 ### 📊 Beginner+ Progress
 
