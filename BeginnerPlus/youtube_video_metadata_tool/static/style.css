@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f0f0f;
+    color: #ffffff;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 35px;
+}
+
+form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+input {
+    flex: 1;
+    padding: 16px 18px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background: #181818;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #ffffff;
+}
+
+input::placeholder {
+    color: #888;
+}
+
+button {
+    padding: 16px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #ff0000;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.metadata {
+    background: #181818;
+    border: 1px solid #292929;
+    border-radius: 14px;
+    padding: 30px;
+}
+
+.metadata h2 {
+    margin-top: 35px;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333;
+    font-size: 22px;
+}
+
+.metadata h2:first-child {
+    margin-top: 0;
+}
+
+.thumbnail {
+    width: 100%;
+    max-width: 700px;
+    display: block;
+    margin-bottom: 25px;
+    border-radius: 10px;
+}
+
+.metadata p {
+    background: #202020;
+    padding: 13px 16px;
+    margin: 8px 0;
+    border-radius: 7px;
+    line-height: 1.5;
+}
+
+.metadata strong {
+    color: #aaa;
+    display: inline-block;
+    min-width: 170px;
+}
+
+.description {
+    background: #202020;
+    padding: 18px;
+    border-radius: 8px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    color: #ddd;
+}
+
+.thumbnails {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.thumbnails div {
+    background: #202020;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.thumbnails h3 {
+    margin-top: 0;
+}
+
+.thumbnails img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.thumbnails p {
+    background: transparent;
+    padding: 5px 0;
+    margin: 0;
+    color: #aaa;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tags span {
+    background: #292929;
+    padding: 8px 12px;
+    border-radius: 20px;
+    color: #ddd;
+    font-size: 14px;
+}
+
+@media (max-width: 650px) {
+
+    .container {
+        width: 94%;
+        padding: 30px 0;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .metadata {
+        padding: 20px;
+    }
+
+    .metadata strong {
+        display: block;
+        margin-bottom: 5px;
+    }
+}

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>YouTube Video Metadata Tool</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>YouTube Video Metadata Tool</h1>
+
+        <form method="POST">
+
+            <input
+                type="text"
+                name="video_url"
+                placeholder="Paste YouTube video URL"
+                required
+            >
+
+            <button type="submit">
+                Get Metadata
+            </button>
+
+        </form>
+
+
+        {% if video %}
+
+        <div class="metadata">
+
+            <!-- BASIC INFORMATION -->
+
+            <h2>Basic Information</h2>
+
+            <img
+                src="{{ video.snippet.thumbnails.high.url }}"
+                alt="Video Thumbnail"
+                class="thumbnail"
+            >
+
+            <p>
+                <strong>Video ID:</strong>
+                {{ video.id }}
+            </p>
+
+            <p>
+                <strong>Title:</strong>
+                {{ video.snippet.title }}
+            </p>
+
+            <p>
+                <strong>Channel:</strong>
+                {{ video.snippet.channelTitle }}
+            </p>
+
+            <p>
+                <strong>Channel ID:</strong>
+                {{ video.snippet.channelId }}
+            </p>
+
+            <p>
+                <strong>Published:</strong>
+                {{ video.snippet.publishedAt }}
+            </p>
+
+            <p>
+                <strong>Category ID:</strong>
+                {{ video.snippet.categoryId }}
+            </p>
+
+            <p>
+                <strong>Default Language:</strong>
+                {{ video.snippet.defaultLanguage }}
+            </p>
+
+            <p>
+                <strong>Audio Language:</strong>
+                {{ video.snippet.defaultAudioLanguage }}
+            </p>
+
+
+            <!-- DESCRIPTION -->
+
+            <h2>Description</h2>
+
+            <div class="description">
+                {{ video.snippet.description }}
+            </div>
+
+
+            <!-- STATISTICS -->
+
+            <h2>Statistics</h2>
+
+            <p>
+                <strong>Views:</strong>
+                {{ video.statistics.viewCount }}
+            </p>
+
+            <p>
+                <strong>Likes:</strong>
+                {{ video.statistics.likeCount }}
+            </p>
+
+            <p>
+                <strong>Comments:</strong>
+                {{ video.statistics.commentCount }}
+            </p>
+
+            <p>
+                <strong>Favorites:</strong>
+                {{ video.statistics.favoriteCount }}
+            </p>
+
+
+            <!-- VIDEO DETAILS -->
+
+            <h2>Video Details</h2>
+
+            <p>
+                <strong>Duration:</strong>
+                {{ duration }}
+            </p>
+
+            <p>
+                <strong>Definition:</strong>
+                {{ video.contentDetails.definition }}
+            </p>
+
+            <p>
+                <strong>Dimension:</strong>
+                {{ video.contentDetails.dimension }}
+            </p>
+
+            <p>
+                <strong>Captions:</strong>
+                {{ video.contentDetails.caption }}
+            </p>
+
+            <p>
+                <strong>Licensed Content:</strong>
+                {{ video.contentDetails.licensedContent }}
+            </p>
+
+            <p>
+                <strong>Projection:</strong>
+                {{ video.contentDetails.projection }}
+            </p>
+
+
+            <!-- LIVE STATUS -->
+
+            <h2>Broadcast Information</h2>
+
+            <p>
+                <strong>Live Broadcast Content:</strong>
+                {{ video.snippet.liveBroadcastContent }}
+            </p>
+
+
+            <!-- THUMBNAILS -->
+
+            <h2>Thumbnails</h2>
+
+            <div class="thumbnails">
+
+                <div>
+                    <h3>Default</h3>
+                    <img src="{{ video.snippet.thumbnails.default.url }}">
+                    <p>
+                        {{ video.snippet.thumbnails.default.width }}
+                        ×
+                        {{ video.snippet.thumbnails.default.height }}
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Medium</h3>
+                    <img src="{{ video.snippet.thumbnails.medium.url }}">
+                    <p>
+                        {{ video.snippet.thumbnails.medium.width }}
+                        ×
+                        {{ video.snippet.thumbnails.medium.height }}
+                    </p>
+                </div>
+
+                <div>
+                    <h3>High</h3>
+                    <img src="{{ video.snippet.thumbnails.high.url }}">
+                    <p>
+                        {{ video.snippet.thumbnails.high.width }}
+                        ×
+                        {{ video.snippet.thumbnails.high.height }}
+                    </p>
+                </div>
+
+                {% if video.snippet.thumbnails.standard %}
+
+                <div>
+                    <h3>Standard</h3>
+                    <img src="{{ video.snippet.thumbnails.standard.url }}">
+                    <p>
+                        {{ video.snippet.thumbnails.standard.width }}
+                        ×
+                        {{ video.snippet.thumbnails.standard.height }}
+                    </p>
+                </div>
+
+                {% endif %}
+
+                {% if video.snippet.thumbnails.maxres %}
+
+                <div>
+                    <h3>Max Resolution</h3>
+                    <img src="{{ video.snippet.thumbnails.maxres.url }}">
+                    <p>
+                        {{ video.snippet.thumbnails.maxres.width }}
+                        ×
+                        {{ video.snippet.thumbnails.maxres.height }}
+                    </p>
+                </div>
+
+                {% endif %}
+
+            </div>
+
+
+            <!-- TAGS -->
+
+            <h2>Tags</h2>
+
+            {% if video.snippet.tags %}
+
+            <div class="tags">
+
+                {% for tag in video.snippet.tags %}
+
+                    <span>{{ tag }}</span>
+
+                {% endfor %}
+
+            </div>
+
+            {% else %}
+
+                <p>No tags available.</p>
+
+            {% endif %}
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>
