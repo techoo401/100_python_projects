@@ -11,7 +11,7 @@ Enter a webpage URL and the scraper collects the page title, headings, paragraph
 🚀 Try the Web Scraper:
 Web Scraper
 
-[Open](https://webscrapy-ob4d.onrender.com
+[Open](https://webscrapy-ob4d.onrender.com)
 
 ---
 
