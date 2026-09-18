@@ -66,19 +66,20 @@ A collection of Python projects built to improve my Python skills through hands-
 
 ## 🔵 Intermediate
 
-| #  | Project       | Key Skills                                                                                       | Live Demo                                    |
-| -- | ------------- | ------------------------------------------------------------------------------------------------ | -------------------------------------------- |
-| 41 | Web Scraper   | Flask, BeautifulSoup, `requests`, web scraping, `urljoin()`, JSON/CSV export, HTTP responses     | [Open](https://webscrapy-ob4d.onrender.com/) |
-| 42 | Price Tracker | SQLite, `requests`, BeautifulSoup, web scraping, URL parsing, price history, database operations | —                                            |
+| #  | Project             | Key Skills                                                                                                          | Live Demo                                    |
+| -- | ------------------- | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
+| 41 | Web Scraper         | Flask, BeautifulSoup, `requests`, web scraping, `urljoin()`, JSON/CSV export, HTTP responses                        | [Open](https://webscrapy-ob4d.onrender.com/) |
+| 42 | Price Tracker       | SQLite, `requests`, BeautifulSoup, web scraping, URL parsing, price history, database operations                    | —                                            |
+| 43 | Job Listing Scraper | Playwright, browser automation, dynamic web scraping, URL encoding, DOM interaction, data extraction, file handling | —                                            |
 
 ### 📊 Intermediate Progress
 
-**2 / 20 — 10% Complete**
+**3 / 20 — 15% Complete**
 
 ---
 
 ## 📈 Overall Progress
 
-**42 / 100 Python Projects Completed**
+**43 / 100 Python Projects Completed**
 
-**42% Complete**
+**43% Complete**
