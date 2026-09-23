@@ -66,20 +66,21 @@ A collection of Python projects built to improve my Python skills through hands-
 
 ## 🔵 Intermediate
 
-| #  | Project             | Key Skills                                                                                                          | Live Demo                                    |
-| -- | ------------------- | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
-| 41 | Web Scraper         | Flask, BeautifulSoup, `requests`, web scraping, `urljoin()`, JSON/CSV export, HTTP responses                        | [Open](https://webscrapy-ob4d.onrender.com/) |
-| 42 | Price Tracker       | SQLite, `requests`, BeautifulSoup, web scraping, URL parsing, price history, database operations                    | —                                            |
-| 43 | Job Listing Scraper | Playwright, browser automation, dynamic web scraping, URL encoding, DOM interaction, data extraction, file handling | —                                            |
+| #  | Project                    | Key Skills                                                                                                                             | Live Demo                                    |
+| -- | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
+| 41 | Web Scraper                | Flask, BeautifulSoup, `requests`, web scraping, `urljoin()`, JSON/CSV export, HTTP responses                                           | [Open](https://webscrapy-ob4d.onrender.com/) |
+| 42 | Price Tracker              | SQLite, `requests`, BeautifulSoup, web scraping, URL parsing, price history, database operations                                       | —                                            |
+| 43 | Job Listing Scraper        | Playwright, browser automation, dynamic web scraping, URL encoding, DOM interaction, data extraction, file handling                    | —                                            |
+| 44 | GitHub Repository Analyzer | GitHub REST API, `requests`, URL parsing, JSON, repository metadata, language statistics, contributors, commits, issues, pull requests | —                                            |
 
 ### 📊 Intermediate Progress
 
-**3 / 20 — 15% Complete**
+**4 / 20 — 20% Complete**
 
 ---
 
 ## 📈 Overall Progress
 
-**43 / 100 Python Projects Completed**
+**44 / 100 Python Projects Completed**
 
-**43% Complete**
+**44% Complete**
