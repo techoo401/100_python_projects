@@ -72,15 +72,16 @@ A collection of Python projects built to improve my Python skills through hands-
 | 42 | Price Tracker              | SQLite, `requests`, BeautifulSoup, web scraping, URL parsing, price history, database operations                                       | —                                            |
 | 43 | Job Listing Scraper        | Playwright, browser automation, dynamic web scraping, URL encoding, DOM interaction, data extraction, file handling                    | —                                            |
 | 44 | GitHub Repository Analyzer | GitHub REST API, `requests`, URL parsing, JSON, repository metadata, language statistics, contributors, commits, issues, pull requests | —                                            |
+| 45 | GitHub Profile Analyzer    | GitHub REST API, `requests`, JSON, profile analysis, repository data, `Counter`, data aggregation                                      | —                                            |
 
 ### 📊 Intermediate Progress
 
-**4 / 20 — 20% Complete**
+**5 / 20 — 25% Complete**
 
 ---
 
 ## 📈 Overall Progress
 
-**44 / 100 Python Projects Completed**
+**45 / 100 Python Projects Completed**
 
-**44% Complete**
+**45% Complete**
