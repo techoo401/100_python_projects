@@ -1,0 +1,24 @@
+# Website Screenshot Tool
+
+A simple Python tool that captures full-page screenshots of websites using Playwright.
+
+## Features
+
+* Accepts any website URL
+* Automatically adds `https://` when needed
+* Captures full-page screenshots
+* Saves screenshots automatically in the `screenshots` folder
+* Handles loading errors and timeouts
+
+## Tech Used
+
+* Python
+* Playwright
+
+## Run
+
+```bash
+python main.py
+```
+
+Enter the website URL when prompted. The screenshot will be saved inside the `screenshots` folder.

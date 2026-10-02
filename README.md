@@ -73,15 +73,16 @@ A collection of Python projects built to improve my Python skills through hands-
 | 43 | Job Listing Scraper        | Playwright, browser automation, dynamic web scraping, URL encoding, DOM interaction, data extraction, file handling                    | —                                            |
 | 44 | GitHub Repository Analyzer | GitHub REST API, `requests`, URL parsing, JSON, repository metadata, language statistics, contributors, commits, issues, pull requests | —                                            |
 | 45 | GitHub Profile Analyzer    | GitHub REST API, `requests`, JSON, profile analysis, repository data, `Counter`, data aggregation                                      | —                                            |
+| 46 | Website Screenshot Tool    | Playwright, browser automation, URL parsing, full-page screenshots, file handling, error handling                                      | —                                            |
 
 ### 📊 Intermediate Progress
 
-**5 / 20 — 25% Complete**
+**6 / 20 — 30% Complete**
 
 ---
 
 ## 📈 Overall Progress
 
-**45 / 100 Python Projects Completed**
+**46 / 100 Python Projects Completed**
 
-**45% Complete**
+**46% Complete**
