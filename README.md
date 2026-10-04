@@ -74,15 +74,16 @@ A collection of Python projects built to improve my Python skills through hands-
 | 44 | GitHub Repository Analyzer | GitHub REST API, `requests`, URL parsing, JSON, repository metadata, language statistics, contributors, commits, issues, pull requests | —                                            |
 | 45 | GitHub Profile Analyzer    | GitHub REST API, `requests`, JSON, profile analysis, repository data, `Counter`, data aggregation                                      | —                                            |
 | 46 | Website Screenshot Tool    | Playwright, browser automation, URL parsing, full-page screenshots, file handling, error handling                                      | —                                            |
+| 47 | Website Uptime Monitor     | `requests`, HTTP status codes, response-time measurement, URL handling, timeout handling, connection errors                            | —                                            |
 
 ### 📊 Intermediate Progress
 
-**6 / 20 — 30% Complete**
+**7 / 20 — 35% Complete**
 
 ---
 
 ## 📈 Overall Progress
 
-**46 / 100 Python Projects Completed**
+**47 / 100 Python Projects Completed**
 
-**46% Complete**
+**47% Complete**
