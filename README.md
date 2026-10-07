@@ -76,15 +76,16 @@ A collection of Python projects built to improve my Python skills through hands-
 | 46 | Website Screenshot Tool    | Playwright, browser automation, URL parsing, full-page screenshots, file handling, error handling                                      | —                                            |
 | 47 | Website Uptime Monitor     | `requests`, HTTP status codes, response-time measurement, URL handling, timeout handling, connection errors                            | —                                            |
 | 48 | REST API Client            | `requests`, HTTP methods, status codes, JSON parsing, response-time measurement, error handling                                        | —                                            |
+| 49 | REST API with Flask        | Flask, REST API, CRUD operations, SQLite, JSON, HTTP methods, HTTP status codes, SQL queries                                           | —                                            |
 
 ### 📊 Intermediate Progress
 
-**8 / 20 — 40% Complete**
+**9 / 20 — 45% Complete**
 
 ---
 
 ## 📈 Overall Progress
 
-**48 / 100 Python Projects Completed**
+**49 / 100 Python Projects Completed**
 
-**48% Complete**
+**49% Complete**
