@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 650px;
+            margin: 70px auto;
+            padding: 20px;
+            background: #f4f6f9;
+            color: #222;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 18px #00000010;
+        }
+
+        label {
+            display: block;
+            margin: 18px 0 7px;
+        }
+
+        input {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 18px;
+            border: 0;
+            border-radius: 6px;
+            background: #2563eb;
+            color: white;
+            cursor: pointer;
+        }
+
+        .message {
+            margin-top: 20px;
+            overflow-wrap: anywhere;
+        }
+
+        .success { color: #15803d; }
+        .error { color: #b91c1c; }
+
+        a { overflow-wrap: anywhere; }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h1>URL Shortener</h1>
+    <p>Turn long URLs into short, shareable links.</p>
+
+    <form method="POST">
+        <label for="url">Long URL</label>
+        <input
+            type="url"
+            id="url"
+            name="url"
+            placeholder="https://example.com/long-link"
+            required
+        >
+
+        <label for="short">Custom short code (optional)</label>
+        <input
+            type="text"
+            id="short"
+            name="short"
+            placeholder="my-link"
+            maxlength="30"
+            pattern="[A-Za-z0-9]+"
+            title="Use only letters and numbers."
+        >
+
+        <button type="submit">Shorten URL</button>
+    </form>
+
+    {% if message %}
+        <div class="message {{ 'success' if success else 'error' }}">
+            <strong>{{ message }}</strong>
+        </div>
+    {% endif %}
+
+    
+    {% if short_url %}
+        <p>Your new URL:</p>
+
+        <p>
+            <a href="{{ short_url }}" target="_blank" rel="noopener noreferrer">
+                {{ short_url }}
+            </a>
+        </p>
+
+        <button type="button" id="copy-btn">Copy URL</button>
+
+        <script>
+            const copyBtn = document.getElementById("copy-btn");
+            const shortUrl = {{ short_url | tojson }};
+
+            copyBtn.addEventListener("click", async () => {
+                try {
+                    await navigator.clipboard.writeText(shortUrl);
+                    copyBtn.textContent = "Copied!";
+                } catch (error) {
+                    copyBtn.textContent = "Copy failed";
+                }
+            });
+        </script>
+    {% endif %}
+
+</div>
+</body>
+</html>
