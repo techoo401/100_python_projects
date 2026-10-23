@@ -78,15 +78,16 @@ A collection of Python projects built to improve my Python skills through hands-
 | 48 | REST API Client | `requests`, HTTP methods, status codes, JSON parsing, response-time measurement, error handling | — |
 | 49 | REST API with Flask | Flask, REST API, CRUD operations, SQLite, JSON, HTTP methods, HTTP status codes, SQL queries | — |
 | 50 | URL Shortener API | Flask, SQLite, REST API, JSON, URL validation, custom short codes, redirects, error handling | — |
+| 51 | Notes API | Flask, REST API, SQLite, context managers, transaction handling, CRUD operations, JSON validation, HTTP status codes | — |
 
 ### 📊 Intermediate Progress
 
-**10 / 20 — 50% Complete**
+**11 / 20 — 55% Complete**
 
 ---
 
 ## 📈 Overall Progress
 
-**50 / 100 Python Projects Completed**
+**51 / 100 Python Projects Completed**
 
-**50% Complete — Halfway There! 🎉**
+**51% Complete — Keep Building! 🎉**
