@@ -79,7 +79,7 @@ A collection of Python projects built to improve my Python skills through hands-
 | 49 | REST API with Flask | Flask, REST API, CRUD operations, SQLite, JSON, HTTP methods, HTTP status codes, SQL queries | — |
 | 50 | URL Shortener API | Flask, SQLite, REST API, JSON, URL validation, custom short codes, redirects, error handling | — |
 | 51 | Notes API | Flask, REST API, SQLite, context managers, transaction handling, CRUD operations, JSON validation, HTTP status codes | — |
-| 52 | To-Do REST API	Flask, REST API, SQLite, CRUD operations, HTTP methods, JSON responses, error handling, API testing with Postman and pytest	| — |
+| 52 | To-Do REST API |	Flask, REST API, SQLite, CRUD operations, HTTP methods, JSON responses, error handling, API testing with Postman and pytest	| — |
 ### 📊 Intermediate Progress
 
 **12 / 20 — 60% Complete**
