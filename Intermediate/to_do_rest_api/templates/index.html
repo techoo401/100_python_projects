@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Todo REST API built with Flask and SQLite. Endpoint reference with example requests and responses.">
+  <title>Todo API — Flask &amp; SQLite REST API</title>
+  <style>
+    :root {
+      --bg: #0a0c12;
+      --bg-soft: #0f1219;
+      --surface: #141823;
+      --surface-2: #1a1f2d;
+      --border: #242a3a;
+      --border-strong: #31394e;
+      --text: #e8ebf3;
+      --muted: #9aa3b8;
+      --accent: #7c8cff;
+      --accent-2: #5eead4;
+      --get: #4ade80;
+      --post: #60a5fa;
+      --put: #fbbf24;
+      --delete: #f87171;
+      --radius: 14px;
+      --mono: ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono", Menlo, Consolas, monospace;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      background-image:
+        radial-gradient(800px 400px at 15% -5%, rgba(124, 140, 255, 0.14), transparent 60%),
+        radial-gradient(700px 360px at 90% 5%, rgba(94, 234, 212, 0.08), transparent 60%);
+      background-repeat: no-repeat;
+    }
+
+    a { color: inherit; }
+    a:focus-visible, .btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
+
+    .container { width: min(1080px, 100% - 40px); margin-inline: auto; }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(10, 12, 18, 0.82);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 650;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+    }
+    .brand-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #0a0c12;
+    }
+    .brand-mark svg { width: 16px; height: 16px; }
+    .nav-links { display: flex; gap: 22px; list-style: none; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.93rem;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    /* Hero */
+    .hero { padding: 96px 0 72px; text-align: center; }
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    .pill {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      padding: 5px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border-strong);
+      background: var(--surface);
+      color: var(--muted);
+    }
+    .pill strong { color: var(--text); font-weight: 600; }
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+      font-weight: 750;
+      margin-bottom: 20px;
+    }
+    .gradient-text {
+      background: linear-gradient(100deg, var(--accent) 10%, var(--accent-2) 90%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .lead {
+      max-width: 620px;
+      margin: 0 auto 34px;
+      color: var(--muted);
+      font-size: clamp(1.02rem, 2vw, 1.18rem);
+    }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: 1px solid var(--border-strong);
+      transition: transform 0.15s, border-color 0.15s, background 0.15s;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #98a4ff);
+      color: #0a0c12;
+      border-color: transparent;
+    }
+    .btn-ghost { background: var(--surface); color: var(--text); }
+    .btn-ghost:hover { border-color: var(--accent); }
+
+    /* Sections */
+    section { padding: 56px 0; }
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .section-intro { color: var(--muted); max-width: 640px; margin-bottom: 36px; }
+    .section-intro code, .card p code {
+      font-family: var(--mono);
+      font-size: 0.88em;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      padding: 1px 6px;
+      border-radius: 5px;
+      color: var(--text);
+    }
+
+    /* Overview cards */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+    .card h3 { font-size: 1.05rem; margin-bottom: 8px; letter-spacing: -0.01em; }
+    .card p { color: var(--muted); font-size: 0.95rem; }
+    .card-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      background: var(--surface-2);
+      border: 1px solid var(--border-strong);
+      color: var(--accent);
+    }
+    .card-icon svg { width: 19px; height: 19px; }
+
+    /* Quick overview table */
+    .overview-list {
+      list-style: none;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      overflow: hidden;
+    }
+    .overview-list li {
+      display: grid;
+      grid-template-columns: 96px minmax(0, 1fr) minmax(0, 1.2fr);
+      align-items: center;
+      gap: 16px;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .overview-list li:last-child { border-bottom: 0; }
+    .overview-list code { font-family: var(--mono); font-size: 0.92rem; overflow-wrap: anywhere; }
+    .overview-list span.desc { color: var(--muted); font-size: 0.93rem; }
+
+    /* Method badges */
+    .method {
+      display: inline-block;
+      min-width: 74px;
+      text-align: center;
+      font-family: var(--mono);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 5px 10px;
+      border-radius: 7px;
+      border: 1px solid currentColor;
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .m-get { color: var(--get); }
+    .m-post { color: var(--post); }
+    .m-put { color: var(--put); }
+    .m-delete { color: var(--delete); }
+
+    /* Endpoint blocks */
+    .endpoint {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+    .endpoint-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, var(--surface-2), var(--surface));
+    }
+    .endpoint-path { font-family: var(--mono); font-size: 1.05rem; font-weight: 600; overflow-wrap: anywhere; }
+    .endpoint-title { margin-left: auto; color: var(--muted); font-size: 0.93rem; }
+    .endpoint-body { padding: 24px; }
+    .endpoint-body > p { color: var(--muted); margin-bottom: 20px; font-size: 0.97rem; }
+    .endpoint-body > p code, .note code {
+      font-family: var(--mono);
+      font-size: 0.88em;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      padding: 1px 6px;
+      border-radius: 5px;
+      color: var(--text);
+    }
+
+    .snippets { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+    .snippets.single { grid-template-columns: minmax(0, 1fr); }
+    figure.code {
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      min-width: 0;
+    }
+    figure.code figcaption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-family: var(--mono);
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      padding: 9px 14px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.015);
+    }
+    figure.code figcaption .status { color: var(--accent-2); }
+    figure.code figcaption .status.error { color: var(--delete); }
+    pre {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      line-height: 1.65;
+      padding: 16px 18px;
+      overflow-x: auto;
+      color: #d4d9e8;
+      tab-size: 2;
+    }
+    pre .k { color: #9fb0ff; }
+    pre .s { color: #8ff0d8; }
+    pre .n { color: #fbbf24; }
+    pre .c { color: #7b859d; }
+
+    .note {
+      margin-top: 24px;
+      padding: 14px 18px;
+      border-left: 3px solid var(--accent);
+      background: var(--surface);
+      border-radius: 0 10px 10px 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 48px;
+      border-top: 1px solid var(--border);
+      padding: 32px 0 44px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .footer-inner { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; }
+
+    @media (max-width: 860px) {
+      .grid-3 { grid-template-columns: 1fr; }
+      .overview-list li { grid-template-columns: 84px 1fr; }
+      .overview-list li .desc { grid-column: 1 / -1; }
+      .endpoint-title { margin-left: 0; width: 100%; }
+    }
+    @media (max-width: 560px) {
+      .nav-links { display: none; }
+      .hero { padding: 64px 0 48px; }
+      .endpoint-head, .endpoint-body { padding: 18px; }
+      section { padding: 40px 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn { transition: none; }
+      .btn:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="Todo API home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+        </span>
+        Todo API
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#endpoints">Endpoints</a></li>
+          <li><a href="#reference">Reference</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- Hero -->
+      <div class="hero">
+        <div class="pill-row" aria-label="Technology stack">
+          <span class="pill"><strong>REST</strong> API</span>
+          <span class="pill"><strong>Flask</strong></span>
+          <span class="pill"><strong>SQLite</strong></span>
+          <span class="pill"><strong>JSON</strong></span>
+        </div>
+        <h1>A simple <span class="gradient-text">Todo REST API</span><br>built with Flask.</h1>
+        <p class="lead">
+          Create, read, complete and delete todos over HTTP. A small, focused REST API backed by SQLite,
+          designed to be easy to read, easy to call, and easy to extend.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#endpoints">
+            View endpoints
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#reference">Quick reference</a>
+        </div>
+      </div>
+
+      <!-- Overview -->
+      <section id="overview" aria-labelledby="overview-title">
+        <p class="eyebrow">Overview</p>
+        <h2 id="overview-title">What this API is for</h2>
+        <p class="section-intro">
+          This project is a backend-only REST API for managing a todo list. It exposes a handful of
+          JSON endpoints that you can call from any HTTP client, script, or frontend.
+        </p>
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+            </div>
+            <h3>Resource-oriented</h3>
+            <p>Everything revolves around a single resource, <code>/todos</code>, using standard HTTP methods.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4c-2 0-3 1-3 3v3c0 1.2-.6 2-2 2 1.4 0 2 .8 2 2v3c0 2 1 3 3 3M16 4c2 0 3 1 3 3v3c0 1.2.6 2 2 2-1.4 0-2 .8-2 2v3c0 2-1 3-3 3"/></svg>
+            </div>
+            <h3>JSON in, JSON out</h3>
+            <p>Send JSON request bodies where needed and receive JSON responses you can parse anywhere.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg>
+            </div>
+            <h3>Flask + SQLite</h3>
+            <p>Built with the Flask micro-framework and persisted in a lightweight SQLite database.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Endpoint summary -->
+      <section id="endpoints" aria-labelledby="endpoints-title">
+        <p class="eyebrow">Endpoints</p>
+        <h2 id="endpoints-title">Available endpoints</h2>
+        <p class="section-intro">Five endpoints cover the full lifecycle of a todo.</p>
+        <ul class="overview-list">
+          <li>
+            <span class="method m-get">GET</span>
+            <code>/todos</code>
+            <span class="desc">Get all todos</span>
+          </li>
+          <li>
+            <span class="method m-get">GET</span>
+            <code>/todos/&lt;id&gt;</code>
+            <span class="desc">Get a single todo</span>
+          </li>
+          <li>
+            <span class="method m-post">POST</span>
+            <code>/todos</code>
+            <span class="desc">Create a todo</span>
+          </li>
+          <li>
+            <span class="method m-put">PUT</span>
+            <code>/todos/&lt;id&gt;</code>
+            <span class="desc">Mark a todo as completed</span>
+          </li>
+          <li>
+            <span class="method m-delete">DELETE</span>
+            <code>/todos/&lt;id&gt;</code>
+            <span class="desc">Delete a todo</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Reference -->
+      <section id="reference" aria-labelledby="reference-title">
+        <p class="eyebrow">API reference</p>
+        <h2 id="reference-title">Requests &amp; responses</h2>
+        <p class="section-intro">
+          Examples below use <code>curl</code> against a local server at <code>http://localhost:5000</code>.
+          Adjust the host and port to match where you run the app. Response bodies are examples.
+        </p>
+
+        <!-- GET /todos -->
+        <article class="endpoint" aria-labelledby="ep-list">
+          <div class="endpoint-head">
+            <span class="method m-get">GET</span>
+            <span class="endpoint-path" id="ep-list">/todos</span>
+            <span class="endpoint-title">Get all todos</span>
+          </div>
+          <div class="endpoint-body">
+            <p>Returns every todo as a JSON array.</p>
+            <div class="snippets">
+              <figure class="code">
+                <figcaption><span>Request</span></figcaption>
+<pre><span class="c"># List all todos</span>
+curl http://localhost:5000/todos</pre>
+              </figure>
+              <figure class="code">
+                <figcaption><span>Response</span><span class="status">Example</span></figcaption>
+<pre>[
+  {
+    <span class="k">"created_at"</span>: <span class="s">"2026-10-27T09:03:13"</span>,
+    <span class="k">"id"</span>: <span class="n">2</span>,
+    <span class="k">"status"</span>: <span class="s">"pending"</span>,
+    <span class="k">"todo"</span>: <span class="s">"Go to SuperMarket"</span>
+  }
+]</pre>
+              </figure>
+            </div>
+          </div>
+        </article>
+
+        <!-- GET /todos/<id> -->
+        <article class="endpoint" aria-labelledby="ep-one">
+          <div class="endpoint-head">
+            <span class="method m-get">GET</span>
+            <span class="endpoint-path" id="ep-one">/todos/&lt;id&gt;</span>
+            <span class="endpoint-title">Get a single todo</span>
+          </div>
+          <div class="endpoint-body">
+            <p>Returns one todo, identified by its <code>id</code>. If no todo has that id, a JSON error is returned instead.</p>
+            <div class="snippets">
+              <figure class="code">
+                <figcaption><span>Request</span></figcaption>
+<pre><span class="c"># Fetch the todo with id 2</span>
+curl http://localhost:5000/todos/2</pre>
+              </figure>
+              <figure class="code">
+                <figcaption><span>Response</span><span class="status">Example</span></figcaption>
+<pre>{
+  <span class="k">"created_at"</span>: <span class="s">"2026-10-27T09:03:13"</span>,
+  <span class="k">"id"</span>: <span class="n">2</span>,
+  <span class="k">"status"</span>: <span class="s">"pending"</span>,
+  <span class="k">"todo"</span>: <span class="s">"Go to SuperMarket"</span>
+}</pre>
+              </figure>
+              <figure class="code">
+                <figcaption><span>Response &middot; not found</span><span class="status error">Error</span></figcaption>
+<pre>{
+  <span class="k">"error"</span>: <span class="s">"Todo not found"</span>
+}</pre>
+              </figure>
+            </div>
+          </div>
+        </article>
+
+        <!-- POST /todos -->
+        <article class="endpoint" aria-labelledby="ep-create">
+          <div class="endpoint-head">
+            <span class="method m-post">POST</span>
+            <span class="endpoint-path" id="ep-create">/todos</span>
+            <span class="endpoint-title">Create a todo</span>
+          </div>
+          <div class="endpoint-body">
+            <p>Creates a new todo from a JSON request body. New todos start with the <code>pending</code> status.</p>
+            <div class="snippets">
+              <figure class="code">
+                <figcaption><span>Request</span></figcaption>
+<pre>curl -X POST http://localhost:5000/todos \
+  -H <span class="s">"Content-Type: application/json"</span> \
+  -d <span class="s">'{"todo": "Buy groceries"}'</span></pre>
+              </figure>
+              <figure class="code">
+                <figcaption><span>Response</span><span class="status">Example</span></figcaption>
+<pre>{
+  <span class="k">"created_at"</span>: <span class="s">"2026-10-27T09:15:42"</span>,
+  <span class="k">"id"</span>: <span class="n">3</span>,
+  <span class="k">"status"</span>: <span class="s">"pending"</span>,
+  <span class="k">"todo"</span>: <span class="s">"Buy groceries"</span>
+}</pre>
+              </figure>
+            </div>
+          </div>
+        </article>
+
+        <!-- PUT /todos/<id> -->
+        <article class="endpoint" aria-labelledby="ep-update">
+          <div class="endpoint-head">
+            <span class="method m-put">PUT</span>
+            <span class="endpoint-path" id="ep-update">/todos/&lt;id&gt;</span>
+            <span class="endpoint-title">Mark a todo as completed</span>
+          </div>
+          <div class="endpoint-body">
+            <p>Marks the todo with the given <code>id</code> as completed.</p>
+            <div class="snippets">
+              <figure class="code">
+                <figcaption><span>Request</span></figcaption>
+<pre><span class="c"># Mark the todo with id 3 as completed</span>
+curl -X PUT http://localhost:5000/todos/3</pre>
+              </figure>
+              <figure class="code">
+                <figcaption><span>Response</span><span class="status">Example</span></figcaption>
+<pre>{
+  <span class="k">"created_at"</span>: <span class="s">"2026-10-27T09:15:42"</span>,
+  <span class="k">"id"</span>: <span class="n">3</span>,
+  <span class="k">"status"</span>: <span class="s">"completed"</span>,
+  <span class="k">"todo"</span>: <span class="s">"Buy groceries"</span>
+}</pre>
+              </figure>
+            </div>
+          </div>
+        </article>
+
+        <!-- DELETE /todos/<id> -->
+        <article class="endpoint" aria-labelledby="ep-delete">
+          <div class="endpoint-head">
+            <span class="method m-delete">DELETE</span>
+            <span class="endpoint-path" id="ep-delete">/todos/&lt;id&gt;</span>
+            <span class="endpoint-title">Delete a todo</span>
+          </div>
+          <div class="endpoint-body">
+            <p>Deletes the todo with the given <code>id</code>.</p>
+            <div class="snippets single">
+              <figure class="code">
+                <figcaption><span>Request</span></figcaption>
+<pre><span class="c"># Delete the todo with id 3</span>
+curl -X DELETE http://localhost:5000/todos/3</pre>
+              </figure>
+            </div>
+          </div>
+        </article>
+
+        <p class="note">
+          <strong>Note:</strong> This page is a static API showcase. Use any HTTP client such as
+          <code>curl</code> to call the endpoints above.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>Todo REST API &middot; Flask &amp; SQLite</span>
+      <span>Documentation page</span>
+    </div>
+  </footer>
+
+</body>
+</html>
